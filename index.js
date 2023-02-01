@@ -1,11 +1,34 @@
-const express = require('express')
-const app = express()
-const port = 3000
+// REDUX 
+/*
+Three Principles of redux :
+1. State 
+2. Action
+3. reducer 
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+*/
+const BUY_CAKE = 'BUY_CAKE' ;
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+// Action 
+const buyCake =()=>{
+    return {
+        type : BUY_CAKE ,
+        info : 'First redux action'
+    }
+}
+
+// Reducer Func(action,prevState) => newState 
+const initialState = {
+      numOfCakes : 10 
+}
+
+const reducer =(state = initialState, action)=>{
+     switch(action.type){
+        case BUY_CAKE : return {
+            ...state , 
+            numOfCakes : state.numOfCakes - 1 
+        }
+        default : return state ;
+     }
+}
+
+
