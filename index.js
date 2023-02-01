@@ -32,3 +32,13 @@ const reducer =(state = initialState, action)=>{
 }
 
 
+// Redux Store 
+/*
+One Redux store for whole application .
+Responsibilties :
+1. Holds Application State 
+2. Allows access to state via getState()
+3. Allows state to get updated via dispatch(action)
+4. Registers listeners via Subsribe(listener)
+Handles unregistering of listeners via the function returned by Subscribe(listener)
+*/
